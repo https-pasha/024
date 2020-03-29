@@ -14,12 +14,11 @@ RUN apt-get install -y zip unzip
 RUN apt-get install apache2 -y
 RUN apt-get install htop
 
+EXPOSE 8081
 
 ENTRYPOINT ["top -b" "sudo systemctl start apache2.service" " "sudo systemctl status apache2.service"]
 
-
-EXPOSE 8081
-
+CMD ["/usr/bin/wc","--help"]
 
 
 
