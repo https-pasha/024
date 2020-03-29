@@ -18,7 +18,7 @@ RUN apt-get install htop
 ENTRYPOINT ["top -b" "sudo systemctl start apache2.service" " "sudo systemctl status apache2.service"]
 
 
-EXSOSE 8081
+EXPOSE 8081
 
 CMD ["/usr/bin/wc","--help"]
 
