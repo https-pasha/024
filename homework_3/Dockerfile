@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER <kreeptos@gmail.com>
 LABEL  Description="This build for lab number 3,based on Ubuntu 18.04"
-       Version="1.0"
+       
 
 
 
@@ -15,9 +15,11 @@ RUN apt-get install apache2 -y
 RUN apt-get install htop
 
 
-EXSPOSE 8081 -p
-
-
 ENTRYPOINT ["top -b" "sudo systemctl start apache2.service" " "sudo systemctl status apache2.service"
 
+
+EXSPOSE 8081
+
 CMD ["/usr/bin/wc","--help"]
+
+
