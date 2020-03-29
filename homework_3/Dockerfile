@@ -20,6 +20,6 @@ ENTRYPOINT ["top -b" "sudo systemctl start apache2.service" " "sudo systemctl st
 
 EXPOSE 8081
 
-CMD ["/usr/bin/wc","--help"]
+
 
 
