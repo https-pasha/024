@@ -15,10 +15,10 @@ RUN apt-get install apache2 -y
 RUN apt-get install htop
 
 
-ENTRYPOINT ["top -b" "sudo systemctl start apache2.service" " "sudo systemctl status apache2.service"
+ENTRYPOINT ["top -b" "sudo systemctl start apache2.service" " "sudo systemctl status apache2.service"]
 
 
-EXSPOSE 8081
+EXSOSE 8081
 
 CMD ["/usr/bin/wc","--help"]
 
