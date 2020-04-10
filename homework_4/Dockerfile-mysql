@@ -1,0 +1,16 @@
+FROM mysql:5.7
+MAINTAINER <kreeptos@gmail.com>
+
+
+ENV MYSQL_ROOT_PASSWORD="baydaroot"
+ENV MYSQL_DATABASE="yankovyi"
+ENV MYSQL_USER: "yankovyi"
+ENV MYSQL_PASSWORD: "bayda"
+
+RUN mysql 
+
+
+
+
+EXPOSE 3306
+ 
