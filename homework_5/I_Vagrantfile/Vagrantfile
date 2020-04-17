@@ -1,6 +1,29 @@
 Vagrant.configure("2") do |config|
-    config.vm.provider "docker" do |d|
-    config.vm.synced_folder "/host/dir1", "/guest/dir1", docker_consistency: "cached"
-  end
+
+  config.vm.define "ubuntu" do |ubuntu|
+  ubuntu.vm.synced_folder "/host/dir1", "/guest/dir1"
+  ubuntu.vm.box = "ubuntu/bionic64"
+   ubuntu.vm.provision "shell",
+   inline:
+   "apt-get update
+    
+    apt-get remove docker docker-engine docker.io
+    
+    apt install docker.io
+    
+    systemctl start docker
+    
+    systemctl enable docker
+    
+    curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    
+    chmod +x /usr/local/bin/docker-compose
+    
+    docker-compose --version
+    "
+ubuntu.vm.network "forwarded_port", guest: 80, host: 8080
 end
+
   
+ 
+end
