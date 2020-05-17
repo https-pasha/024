@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo 'Yankovy Pavlo Anatoliyovych'
+echo 'Yankovy Pavlo Anatoliyovych smt.Vapnyarka'
